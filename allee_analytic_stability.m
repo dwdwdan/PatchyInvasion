@@ -8,19 +8,7 @@ figure()
 hold on
 
 for u0 = u0s
-    if u0<0
-        u = u0:0;
-    else
-        if u0<beta
-            u=0:u0;
-        else
-            if u0<K
-                u=u0:K;
-            else
-                u=K:u0;
-            end
-        end
-    end
+    u=generate_u(u0, beta, K);
     [t, u_ana] = allee_analytic(alpha, beta, K, u0, u);
     plot(t, u_ana)
 end
@@ -31,3 +19,18 @@ xlabel("Time")
 ylabel("Population")
 xticks(0:5)
 title("Analytic Solution to the Allee ODE with differing initial conditions")
+function u = generate_u(u0, beta, K)
+    if u0<0
+            u = u0:0;
+        else
+            if u0<beta
+                u=0:u0;
+            else
+                if u0<K
+                    u=u0:K;
+                else
+                    u=K:u0;
+                end
+            end
+    end
+end
