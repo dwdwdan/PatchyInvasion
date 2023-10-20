@@ -9,11 +9,11 @@ function [steady_state, stability] = check_stability (alpha, beta, K, c, steady_
     t=0:dt:tmax;
 
     allee_diff = @(t,u) alpha*u * (u-beta) * (1-u/K) + c;
-    [t, u_num] = ode45(allee_diff, t, steady_state+perturbation);
+    [~, u_num] = ode45(allee_diff, t, steady_state+perturbation);
     if max(u_num) > upper_bound
         stability = false;
     else
-        [t, u_num] = ode45(allee_diff, t, steady_state-perturbation);
+        [~, u_num] = ode45(allee_diff, t, steady_state-perturbation);
         if min(u_num) < lower_bound
             stability = false;
         end
