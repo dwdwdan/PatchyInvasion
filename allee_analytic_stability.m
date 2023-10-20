@@ -19,6 +19,9 @@ xlabel("Time")
 ylabel("Population")
 xticks(0:5)
 title("Analytic Solution to the Allee ODE with differing initial conditions")
+yline(beta, '--')
+yline(K, '--')
+
 function u = generate_u(u0, beta, K)
     if u0<0
             u = u0:0;

@@ -30,4 +30,6 @@ legend({'u_0 = 1', 'u_0 = 50', 'u_0 = 195', 'u_0 = 205', ...
 % Axis Title
 title("Numerical Solution to the Allee Model with different starting " + ...
     "populations")
+yline(beta, '--')
+yline(K, '--')
 hold off
