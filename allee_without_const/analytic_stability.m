@@ -9,7 +9,7 @@ hold on
 
 for u0 = u0s
     u=generate_u(u0, beta, K);
-    [t, u_ana] = allee_analytic(alpha, beta, K, u0, u);
+    [t, u_ana] = analytic(alpha, beta, K, u0, u);
     plot(t, u_ana)
 end
 hold off

@@ -6,7 +6,7 @@ t_num = 0:dt:tmax;
 
 u_num = ode5(allee_diff, t_num, u0);
 
-[t_ana, u_ana] = allee_analytic(alpha, beta, K, u0, u_num);
+[t_ana, u_ana] = analytic(alpha, beta, K, u0, u_num);
 
 t_num = t_num(t_ana<Inf);
 t_ana = t_ana(t_ana<Inf);
