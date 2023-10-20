@@ -14,8 +14,8 @@ dt=tmax/num_timesteps;  % Time step
 
 
 
-cs = -300:100:200;
-u0s = [0:50:500 500:200:1500];
+cs = [-200 0 50 100];
+u0s = [0:50:300 300:200:1500];
 convergence_times = [];
 tiledlayout("flow");
 for c = cs
