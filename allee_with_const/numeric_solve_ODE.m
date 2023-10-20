@@ -30,6 +30,10 @@ for c = cs
         ylabel("Population")
         ylim([0 1500]);
         yticks(0:200:1500)
+        steady_states = get_steady_state(alpha, beta, K, c);
+        for ss = steady_states
+            yline(ss, '--')
+        end
     end
     hold off
 
