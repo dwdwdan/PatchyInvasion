@@ -12,6 +12,7 @@ dt = 1e-4;
 
 t=0:dt:tmax;
 
+fig=figure();
 conv_times=[];
 for i=1:length(cs)
     c=cs(i)
@@ -32,3 +33,4 @@ plot(cs, conv_times);
 xlabel("c")
 ylabel("Number of steps to converge to carrying capacity steady state")
 title("Plot of c vs number of timesteps to converge")
+fontsize(fig, 18, "points")

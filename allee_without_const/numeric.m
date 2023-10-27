@@ -15,7 +15,7 @@ dt=tmax/num_timesteps;  % Time step
 
 u0s = [1 50 195 205 300 600 900 1200];
 convergence_times = [];
-ax = setup_figure(tmax, dt);
+ax = setup_figure(tmax, dt, 18);
 
 allee_diff = @(t,u) alpha*u * (u-beta) * (1-u/K);
 
@@ -28,8 +28,9 @@ legend({'u_0 = 1', 'u_0 = 50', 'u_0 = 195', 'u_0 = 205', ...
 
 
 % Axis Title
-title("Numerical Solution to the Allee Model with different starting " + ...
+title(gca, "Numerical Solution to the Allee Model with different starting " + ...
     "populations")
+fontsize(ax, 18, "Points");
 yline(beta, '--')
 yline(K, '--')
 hold off

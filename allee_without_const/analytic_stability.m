@@ -4,7 +4,7 @@ beta = 200;
 
 u0s = [1 50 195 205 300 600 900 1200];
 
-figure()
+fig = figure()
 hold on
 
 for u0 = u0s
@@ -19,8 +19,11 @@ xlabel("Time")
 ylabel("Population")
 xticks(0:5)
 title("Analytic Solution to the Allee ODE with differing initial conditions")
+fontsize(fig, 18, "points");
 yline(beta, '--')
 yline(K, '--')
+
+
 
 function u = generate_u(u0, beta, K)
     if u0<0

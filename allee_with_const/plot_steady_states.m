@@ -7,7 +7,8 @@ beta = 200;
 K = 1000;
 cs = [-300:300 89:0.1:94];
 us = [];
-
+fig=figure();
+hold on
 
 for i=1:length(cs)
     c=cs(i);
@@ -20,16 +21,17 @@ for i=1:length(cs)
             plot(c, ss, 'r.')
         end
     end
-    hold on
 end
+xlabel("c");
+ylabel("Steady States")
+title("Numerical Estimates for steady states depending on c")
 yline(0, '--')
 yline(K, '--')
 yline(beta, '--')
 red_point = plot(NaN, NaN, 'r');
 grn_point = plot(NaN, NaN, 'g');
 legend([red_point grn_point], {'Unstable Steady States', 'Stable Steady States'})
+fontsize(fig, 18, "points")
 hold off
-xlabel("c");
-ylabel("Steady States")
-title("Numerical Estimates for steady states depending on c")
+
 

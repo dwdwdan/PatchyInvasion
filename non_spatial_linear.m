@@ -21,7 +21,10 @@ u_an = lin_soln(t);
 % Compute error in infinity norm and 2-norm
 [err_infty, err_two] = compute_error(u_num, u_an);
 
-ax = setup_figure(tmax, dt);
+fig=figure();
 
-plot(ax, u_num);
+plot(t, u_num);
 title("Numerical Solution to the Exponential Model")
+xlabel("Time")
+ylabel("Population")
+fontsize(fig, 18, "points")

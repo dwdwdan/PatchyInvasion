@@ -17,6 +17,7 @@ for dt = dts
     err_inftys = [err_inftys err_infty];
     assert(length(err_inftys)==length(err_twos))
 end
+fig=figure();
 
 yyaxis left
 loglog(dts, err_inftys)
@@ -27,3 +28,4 @@ ylabel("2 Norm")
 
 xlabel("Length of timestep")
 title("Plot of error norms for differing timestep lengths")
+fontsize(fig, 24,"points");

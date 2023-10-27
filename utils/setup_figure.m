@@ -1,4 +1,4 @@
-function ax_top = setup_figure(tmax, dt)
+function ax_top = setup_figure(tmax, dt, fsize)
 
 fig = figure();
 ax = axes();
@@ -6,6 +6,7 @@ hold(ax);
 xlabel("Time")
 ax.XLim=[0 tmax];
 ax.YTick=[];
+fontsize(ax, fsize, "points");
 
 
 ax_top = axes();

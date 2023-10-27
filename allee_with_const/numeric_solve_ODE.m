@@ -13,7 +13,7 @@ epsilon = 1;
 dt=tmax/num_timesteps;  % Time step
 
 
-
+fig=figure();
 cs = [-200 0 50 100];
 u0s = [0:50:300 300:200:1500];
 convergence_times = [];
@@ -38,3 +38,4 @@ for c = cs
     hold off
 
 end
+fontsize(fig, 18, "points")
