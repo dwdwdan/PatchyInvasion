@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Patchy Invasion
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Daniel
+    family-names: Walters
+    email: dan.walters5@outlook.com
+repository-code: 'https://www.github.com/dwdwdan/PatchyInvasion'
+license: MIT
