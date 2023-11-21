@@ -4,8 +4,7 @@ assume(gamma, "real")
 assume(beta, "real")
 assume(m, "real")
 
-u_rhs = gamma*u*(u-beta)*(1-u) - u*v;
-v_rhs = u*v - m*v;
+[u_rhs, v_rhs] = model(u, v, gamma, beta, m);
 
 hor_iso_u = solve(u_rhs == 0, u);
 hor_iso_v = solve(u_rhs == 0, v);
