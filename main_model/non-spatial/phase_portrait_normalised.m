@@ -34,11 +34,12 @@ quiver(us,vs,dus,dvs,'k', 'AutoScaleFactor',0.5, 'Alignment','center');
 axis tight equal
 hold on
 
-plot(m, gamma*(m-beta)*(1-m), 'b.', 'MarkerSize',20)
+plot(m, gamma*(m-beta)*(1-m), 'g.', 'MarkerSize',20)
 
-plot(0,0, 'b.', 'MarkerSize',20)
-plot(1,0, 'b.', 'MarkerSize',20)
-plot(beta, 0, 'b.', 'MarkerSize',20)
+plot(0,0, 'g.', 'MarkerSize',20)
+plot(1,0, 'r.', 'MarkerSize',20)
+plot(beta, 0, 'r.', 'MarkerSize',20)
+
 
 xline(0)
 yline(0)
