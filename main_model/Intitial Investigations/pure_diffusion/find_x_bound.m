@@ -4,10 +4,13 @@ epsilon = 1e-1;
 
 tmaxs = linspace(0.3, 30, 20);
 x_bounds = [];
+last_X=2;
 for tmax = tmaxs
-    for x_bound=1:0.1:20
-        [~, ~, u, left_good, right_good] = solve_and_check(x_bound, tmax, dx, dt, epsilon, "step");
+    for x_bound=last_X-1:1:1e10
+        [~, ~, ~, left_good, right_good] = solve_and_check(x_bound, tmax, dx, dt, epsilon, "step");
         if left_good && right_good
+            fprintf("For tmax=%g, X=%g\n", tmax,x_bound)
+            last_X = x_bound;
             break
         end
 
