@@ -1,8 +1,8 @@
 dt = 1e-1;
 dx = 1e-1;
-epsilon = 1e-1;
+epsilon = 1e-3;
 
-tmaxs = linspace(0.3, 30, 20);
+tmaxs = linspace(3*dt, 200, 20);
 x_bounds = [];
 last_X=2;
 for tmax = tmaxs
@@ -23,6 +23,6 @@ fig = figure();
 plot(tmaxs,x_bounds)
 xlabel("Maximum Time")
 ylabel("X bound required")
-ylim([0 5])
+title("Minimum Required X for a given maximum time")
 fontsize(fig, 18, 'points')
 

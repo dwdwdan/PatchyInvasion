@@ -5,7 +5,7 @@ X=100;
 
 epsilon = 1e-3;
 
-[xvec, tvec, umat] = solve_and_check(100,tmax,dx,dt,epsilon, 1,0,1);
+[xvec, tvec, umat] = solve_and_check(100,tmax,dx,dt,epsilon, 1,0.06,1);
 
 % From plotting this solution, the wave exists by t=40, so we use compute
 % the propagation speed from this point
