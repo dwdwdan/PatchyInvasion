@@ -1,18 +1,12 @@
-dt = 1e-1;
-dx = 1e-1;
-tmax = 100;
-X=100;
+load("solution.mat");
 
-epsilon = 1e-3;
-
-[x, tvec, u] = solve_and_check(100,tmax,dx,dt,epsilon, 1,0.06,1);
 close all
 fig=figure();
 hold on
 leg=[];
 for t=[0 20 40 60 80 100]
     t_idx = t/dt + 1;
-    plot(x, u(t_idx, :))
+    plot(xvec, umat(t_idx, :))
     leg = [leg "\(t="+t+"\)"];
 end
 title("Solution of the allee diffusion equation with gaussian initial condition")
