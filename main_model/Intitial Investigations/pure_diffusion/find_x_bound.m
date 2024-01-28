@@ -7,7 +7,7 @@ x_bounds = [];
 last_X=2;
 for tmax = tmaxs
     for x_bound=last_X-1:1e-1:1e10
-        [~, ~, ~, left_good, right_good] = solve_and_check(x_bound, tmax, dx, dt, epsilon, "step");
+        [~, ~, ~, left_good, right_good] = solve_and_check(x_bound, tmax, dx, dt, epsilon, "gauss");
         if left_good && right_good
             fprintf("For tmax=%g, X=%g\n", tmax,x_bound)
             last_X = x_bound;
