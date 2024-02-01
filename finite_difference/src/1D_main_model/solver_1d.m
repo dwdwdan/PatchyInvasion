@@ -1,4 +1,4 @@
-function [x, t, u, v] = solver_1d(X, tmax, dx, dt, u0, v0, epsilon)
+function [x, t, u, v] = solver_1d(X, tmax, dx, dt, u0, v0, epsilon, gamma, m, beta)
 
 % Vectors x and t represent the values of x and t at the relevant indices
 x = -X:dx:X;
@@ -24,21 +24,21 @@ u(end, :) = 0;
 v(end, :) = 0;
 
 for j=1:length(t)-1
-    fprintf("j=%d/%d\n", j, length(t)-1);
-
     % If the maximum of both is small, we know both populations are
     % extinct, so we can stop computing here.
     if max(u(:,j))<epsilon && max(v(:,j))<epsilon
         break
     end
 
+    newu=zeros(length(x)-2,1);
+    newv=zeros(length(x)-2,1);
     for i=2:(length(x)-2)
-
-        % Compute the source terms
-        [F, G] = rhs(u(i,j), v(i,j));
-        u(i,j+1) = u(i,j) + alpha*(u(i+1,j) - 2*u(i,j) + u(i-1,j)) + delta*F;
-        v(i,j+1) = v(i,j) + alpha*(v(i+1,j) - 2*v(i,j) + v(i-1,j)) + delta*G;
+        [F, G] = rhs(u(i,j),v(i,j),gamma, m, beta);
+        newu(i) = u(i,j) + alpha*(u(i+1,j) - 2*u(i,j) + u(i-1,j)) + delta*F;
+        newv(i) = v(i,j) + alpha*(v(i+1,j) - 2*v(i,j) + v(i-1,j)) + delta*G;
     end
+    u(2:length(x)-2, j+1) = newu(2:length(x)-2);
+    v(2:length(x)-2, j+1) = newv(2:length(x)-2);
 end
 u=u';
 v=v';

@@ -1,4 +1,3 @@
-global beta gamma m
 gamma = 10;
 beta = 0.01;
 m = 0.1;
@@ -9,7 +8,7 @@ tmax = 80;
 X=200;
 epsilon = 1e-3;
 
-[x, t, u, v] = solver_1d(X, tmax, dx, dt, @(x) ic_gauss(x, epsilon, 0,1), @(x) ic_gauss(x,epsilon, 0, 1), epsilon);
+[x, t, u, v] = solver_1d(X, tmax, dx, dt, @(x) ic_gauss(x, epsilon, 0,1), @(x) ic_gauss(x,epsilon, 0, 1), epsilon, gamma, m, beta);
 
 close all
 
