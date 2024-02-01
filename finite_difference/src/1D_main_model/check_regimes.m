@@ -24,7 +24,7 @@ for m_idx=1:length(ms)
 
         [~,~,u,~] = solver_1d_non_global(X, tmax, dx, dt, u0, v0, epsilon, m, beta);
 
-        regime = determine_regime(u(end,:));
+        regime = determine_regime(u(end,:), 1e-3);
         fprintf("m=%g, beta=%g, regime=%d\n", m, beta, regime);
         regimes(m_idx, beta_idx) = regime;
     end

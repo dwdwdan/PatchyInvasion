@@ -29,6 +29,7 @@ end
 %%
 save("solutions_patchy.mat")
 %%
+fig=figure();
 for idx = 1:size(us,3)
     nexttile
     plot(xs(:, idx),us(end, :,idx))
@@ -39,6 +40,7 @@ for idx = 1:size(us,3)
 end
 
 %%
+fig2=figure();
 for idx = 1:size(us,3)
     nexttile
     pcolor(xs(:,idx), ts(:, idx), us(:,:,idx))
