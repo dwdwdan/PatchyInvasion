@@ -1,6 +1,5 @@
 clear
 
-global beta gamma m
 gamma = 10;
 beta = 0.1;
 
@@ -20,7 +19,7 @@ ms = 0.45:0.01:0.55;
 fig=figure();
 for idx = 1:length(ms)
     m = ms(idx);
-    [x, t, u, v] = solver_1d(X, tmax, dx, dt, @(x) ic_gauss(x, epsilon, 0,1), @(x) ic_gauss(x,epsilon, 0, 1), epsilon);
+    [x, t, u, v] = solver_1d(X, tmax, dx, dt, @(x) ic_gauss(x, epsilon, 0,1), @(x) ic_gauss(x,epsilon, 0, 1), epsilon, gamma, m, beta);
     xs(:,idx) = x;
     ts(:,idx) = t;
     us(:,:,idx) = u;
