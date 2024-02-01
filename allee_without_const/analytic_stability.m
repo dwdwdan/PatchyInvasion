@@ -13,15 +13,16 @@ for u0 = u0s
     plot(t, u_ana)
 end
 hold off
+yline(beta, '--')
+yline(K, '--')
 legend({'u_0 = 1', 'u_0 = 50', 'u_0 = 195', 'u_0 = 205', ...
-    'u_0 = 300', 'u_0 = 600', 'u_0 = 900', 'u_0 = 1200'})
+    'u_0 = 300', 'u_0 = 600', 'u_0 = 900', 'u_0 = 1200', '',''})
 xlabel("Time")
 ylabel("Population")
 xticks(0:5)
 title("Analytic Solution to the Allee ODE with differing initial conditions")
 fontsize(fig, 18, "points");
-yline(beta, '--')
-yline(K, '--')
+
 
 
 
