@@ -35,18 +35,31 @@ hold on
 for m_idx=1:length(ms)
     for beta_idx=1:length(betas)
         switch regimes(m_idx, beta_idx)
-            case 0
-                plot(ms(m_idx), betas(beta_idx), 'b*')
-            case 1
+            case -1
+                % Extinction
+                plot(ms(m_idx), betas(beta_idx), 'ko')
+            case -2
+                % Propagating Wave
                 plot(ms(m_idx), betas(beta_idx), 'ro')
-	    case -1
-                plot(ms(m_idx), betas(beta_idx), 'k.')
+            case 1
+                plot(ms(m_idx), betas(beta_idx), 'g*')
+            case 2
+                plot(ms(m_idx), betas(beta_idx), 'b*')
+            case 3
+                plot(ms(m_idx), betas(beta_idx), 'r*')
+            case 4
+                plot(ms(m_idx), betas(beta_idx), 'r*')
+            case 5
+                plot(ms(m_idx), betas(beta_idx), 'r*')
+            otherwise
+                error("Regime %g not coloured", regimes(m_idx, beta_idx))
         end
     end
 end
 
 xlabel("m")
 ylabel("beta")
+title("Regime Classification depending on m and beta")
 xlim([min(ms), max(ms)])
 ylim([min(betas), max(betas)])
 

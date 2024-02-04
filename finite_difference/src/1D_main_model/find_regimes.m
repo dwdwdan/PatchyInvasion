@@ -1,5 +1,3 @@
-clear
-
 gamma = 10;
 beta = 0.1;
 
@@ -14,10 +12,8 @@ ts = [];
 us = [];
 vs = [];
 
-%ms = [0 0.4 0.5 0.6 0.8 1];
-ms = 0.45:0.01:0.55;
-fig=figure();
-for idx = 1:length(ms)
+ms = [2 0.6 0.54 0.5 0.49 0.1];
+parfor idx = 1:length(ms)
     m = ms(idx);
     [x, t, u, v] = solver_1d(X, tmax, dx, dt, @(x) ic_gauss(x, epsilon, 0,1), @(x) ic_gauss(x,epsilon, 0, 1), epsilon, gamma, m, beta);
     xs(:,idx) = x;
@@ -26,23 +22,18 @@ for idx = 1:length(ms)
     vs(:,:,idx) = v;
 end
 %%
-save("solutions_patchy.mat")
+save("solutions_regimes.mat")
 %%
 fig=figure();
-for idx = 1:size(us,3)
+tiledlayout(2, 3);
+regime_labels = ["I", "II", "III", "IV", "V", "VI"];
+for idx = 1:size(us, 3)
     nexttile
     plot(xs(:, idx),us(end, :,idx))
     shading interp
-    title("m = " + ms(idx))
+    title("Regime " + regime_labels(idx) + " (m = " + ms(idx) + ")")
+    yline(1, '--')
     xlabel("x")
     ylabel("u")
-end
-
-%%
-fig2=figure();
-for idx = 1:size(us,3)
-    nexttile
-    pcolor(xs(:,idx), ts(:, idx), us(:,:,idx))
-    shading interp
-    title(["m = " ms(idx)])
+    ylim([0 1.1])
 end
