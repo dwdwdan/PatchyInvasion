@@ -12,7 +12,18 @@ v0 = u0;
 ms = 0:0.015:1.5;
 betas = 0:0.01:0.25;
 
+central_region_width = 25;
+tol = 1e-3;
+
 regimes=[];
+
+x_length = 2*X/dx;
+x_mid_idx = round(x_length/2,0);
+central_region_width_idx = central_region_width/dx;
+
+
+
+central_region = floor(x_mid_idx-central_region_width_idx):ceil(x_mid_idx+central_region_width_idx);
 
 num_betas = length(betas);
 tic
@@ -23,7 +34,8 @@ parfor m_idx=1:length(ms)
         
         [~,~,u,~] = solver_1d(X, tmax, dx, dt, u0, v0, epsilon, gamma, m, beta);
         
-        regime = determine_regime(u(end,:), 1e-3);
+
+        regime = determine_regime(u(end,:), tol, central_region);
         regimes(m_idx, beta_idx) = regime;
     end
 end
