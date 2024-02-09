@@ -28,6 +28,8 @@ parfor m_idx=1:length(ms)
     end
 end
 toc
+
+save("regimes.mat")
 %% Plot with new system
 fig=figure();
 hold on
