@@ -51,7 +51,7 @@ for m_idx=1:length(ms)
         switch regimes(m_idx, beta_idx)
             case -1
                 % Extinction
-                plot(ms(m_idx), betas(beta_idx), 'ko')
+                plot(ms(m_idx), betas(beta_idx), 'k.')
             case -2
                 % Propagating Wave
                 plot(ms(m_idx), betas(beta_idx), 'ro')
@@ -60,16 +60,22 @@ for m_idx=1:length(ms)
             case 2
                 plot(ms(m_idx), betas(beta_idx), 'b*')
             case 3
-                plot(ms(m_idx), betas(beta_idx), 'r*')
-            case 4
-                plot(ms(m_idx), betas(beta_idx), 'r*')
-            case 5
-                plot(ms(m_idx), betas(beta_idx), 'r*')
+                plot(ms(m_idx), betas(beta_idx), 'k*')
             otherwise
-                error("Regime %g not coloured", regimes(m_idx, beta_idx))
-        end
+                plot(ms(m_idx), betas(beta_idx), 'r*')
+            end
     end
 end
+
+qw{1} = plot(nan, 'k.');
+qw{2} = plot(nan, 'ro');
+qw{3} = plot(nan, 'g*');
+qw{4} = plot(nan, 'b*');
+qw{5} = plot(nan, 'k*');
+qw{6} = plot(nan, 'r*');
+
+legend([qw{:}], {'Extinction', 'Propagating Wave', '1 Object', '2 Objects', ...
+    '3 Objects', '4 or More Objects'})
 
 xlabel("m")
 ylabel("beta")
