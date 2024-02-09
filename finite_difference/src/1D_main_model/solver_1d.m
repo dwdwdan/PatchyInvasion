@@ -1,5 +1,8 @@
 function [x, t, u, v] = solver_1d(X, tmax, dx, dt, u0, v0, epsilon, gamma, m, beta)
 
+alpha = dt/(dx*dx);
+assert(alpha<0.5, "alpha is too large. The solution will not converge")
+
 % Vectors x and t represent the values of x and t at the relevant indices
 x = -X:dx:X;
 t = 0:dt:tmax;
