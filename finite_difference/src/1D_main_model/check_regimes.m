@@ -9,7 +9,7 @@ epsilon = 1e-3;
 u0 = @(x) ic_gauss(x, epsilon, 0,1);
 v0 = u0;
 
-ms = 0:0.01:1.5;
+ms = 0:0.015:1.5;
 betas = 0:0.01:0.25;
 
 regimes=[];
