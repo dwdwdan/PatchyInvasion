@@ -8,7 +8,7 @@ function x = get_first_less_than(uvec, xvec, u_comp, tol)
             return
         end
     end
-    if exist('AmechM','var') == 0
+    if exist('x','var') == 0
         x=NaN;
     end
 end
