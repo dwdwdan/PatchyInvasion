@@ -20,7 +20,7 @@ u(end, :) = 0;
 
 for j=1:length(t)-1
     for i=2:(length(x)-2)
-        u(i,j+1) = u(i,j) + alpha*(u(i+1,j) - 2*u(i,j) + u(i-1,j)) + dt*dx*dx*F(u(i,j));
+        u(i,j+1) = u(i,j) + alpha*(u(i+1,j) - 2*u(i,j) + u(i-1,j)) + dt*F(u(i,j));
     end
 end
 u=u';
