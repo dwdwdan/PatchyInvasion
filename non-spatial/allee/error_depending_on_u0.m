@@ -8,7 +8,7 @@ K = 1000;
 tmax = 6;              % Time at end of interest
 dt=1e-1;  % Time step
 
-u0s = 1:1:1500;
+u0s = 1:1:200;
 u0s = u0s(u0s~=beta);
 u0s = u0s(u0s~=K);
 
