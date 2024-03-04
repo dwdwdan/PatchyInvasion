@@ -22,11 +22,10 @@ for idx = 1:length(u0s)
     xlabel("Time");
     ylabel("Population")
     title("\(u_0 = " + u0s(idx) + "\), \(v_0 = "+v0s(idx) + "\)", 'Interpreter','latex')
-    fontsize(fig, 18, "points")
     ylim([0 1.2])
     yline(0.9, "--")
     yline(0.2, "--")
-    legend(["u","v", "", ""]);
+    legend(["u","v", "", ""], 'Location','east');
 
 
 end

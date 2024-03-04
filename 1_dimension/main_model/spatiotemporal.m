@@ -2,7 +2,7 @@ gamma = 10;
 beta = 0.15;
 tol = 1e-3;
 
-dt=1e-2;
+dt=0.1;
 dx=1;
 tmax = 500;
 X=1000;
@@ -40,8 +40,8 @@ for m_idx = 1:length(ms)
     nexttile;
     plot(ts,all_object_counts(:, m_idx),'-x', 'MarkerSize',4)
     title("m="+ms(m_idx))
-    xlabel("Time")
-    ylabel("Number of objects")
+    xlabel("t")
+    ylabel("n(t)")
     ylim([0 max(all_object_counts(:,m_idx))+1])
     xlim([0 xlims(m_idx)])
 end

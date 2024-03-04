@@ -56,8 +56,7 @@ xlabel('u')
 ylabel('v')
 xlim([u_min, u_max])
 ylim([v_min, v_max])
-title("Phase Portrait of the non-spatial problem")
-fontsize(fig, 18, 'points')
+title("Phase Portrait")
 
 function W = vector_model(~, W, gamma, beta, m)
     [du, dv] = model(W(1), W(2), gamma, beta, m);

@@ -1,7 +1,7 @@
 tmax = 20;
 dt = 0.1;
 
-[xvec, tvec, umat, left_good, right_good] = solve_and_check(20, tmax, 0.1,dt, 1e-3, "gauss");
+[xvec, tvec, umat, left_good, right_good] = diff_soln_1d(20, tmax, 0.1,dt, 1e-3, "gauss");
 
 if ~left_good || ~right_good
     error("Not 0 at endpoints")

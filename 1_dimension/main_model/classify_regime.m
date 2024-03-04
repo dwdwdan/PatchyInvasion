@@ -1,4 +1,4 @@
-function regime = determine_regime(u, tol, central_region)
+function regime = classify_regime(u, tol, central_region)
     % u is a vector
  
     if max(u) < tol

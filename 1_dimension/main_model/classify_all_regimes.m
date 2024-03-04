@@ -35,14 +35,14 @@ parfor m_idx=1:length(ms)
         [~,~,u,~] = solver_1d(X, tmax, dx, dt, u0, v0, epsilon, gamma, m, beta);
         
 
-        regime = determine_regime(u(end,:), tol, central_region);
+        regime = classify_regime(u(end,:), tol, central_region);
         regimes(m_idx, beta_idx) = regime;
     end
 end
 toc
 
 save("regimes.mat")
-%% Plot with new system
+%% Plot the graph
 fig=figure();
 hold on
 
