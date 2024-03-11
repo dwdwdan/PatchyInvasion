@@ -8,7 +8,7 @@ K = 1000;
 tmax = 6;              % Time at end of interest
 dt=1e-1;  % Time step
 
-u0s = 1:1:200;
+u0s = 1:1:1500;
 u0s = u0s(u0s~=beta);
 u0s = u0s(u0s~=K);
 
@@ -29,4 +29,4 @@ plot(u0s, err_twos)
 ylabel("2 Norm")
 
 xlabel("u_0")
-title("Plot of error norms for differing u_0")
+title("Error norms for differing u_0")

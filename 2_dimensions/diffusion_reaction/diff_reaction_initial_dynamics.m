@@ -20,7 +20,7 @@ end
 
 xlabel("x")
 ylabel("u")
-title("Solution to the diffusion reaction equation at y = 0")
+title("Solution at y = 0")
 ylim([0 1.2])
 legend
 hold off
