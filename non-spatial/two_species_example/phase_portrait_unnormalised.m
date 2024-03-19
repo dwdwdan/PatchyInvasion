@@ -31,6 +31,8 @@ yline(1, 'b--')
 xline(0, 'b--')
 xline(1, 'r--')
 
+
+
 u0s = [0.009 0.01 0.01 0.01 -0.01 -0.01 2.1 2];
 v0s = [0.01 0.009 0.01 -0.01 0.01 -0.01 2 2.1];
 
@@ -40,6 +42,9 @@ for i=1:length(u0s)
     [ts,ys] = ode45(f, [0,10], [u0 v0]);
     plot(ys(:,1), ys(:,2));
 end
+
+plot(0,0, 'r.', 'MarkerSize',20)
+plot(1,1, 'b.', 'MarkerSize',20)
 
 xlim([u_min u_max])
 ylim([v_min v_max])

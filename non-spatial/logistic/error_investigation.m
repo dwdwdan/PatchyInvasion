@@ -34,6 +34,6 @@ legend("\infty-norm", "2-norm")
 fig2 = figure();
 loglog(dts, conv_times)
 xlabel("Time Step")
-ylabel("Number of Timesteps to converge to K")
+ylabel("Convergence Time")
 title("Convergence time with differing timesteps")
 

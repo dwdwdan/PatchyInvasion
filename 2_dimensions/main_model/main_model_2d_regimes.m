@@ -12,7 +12,7 @@ ic_kappa = 0.5;
 gamma=6;
 beta=0.21;
 
-ms = [1];
+ms = [0.374];
 
 for m_idx=1:length(ms)
     m = ms(m_idx);

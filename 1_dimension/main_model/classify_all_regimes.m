@@ -75,11 +75,11 @@ qw{5} = plot(nan, 'k*');
 qw{6} = plot(nan, 'r*');
 
 legend([qw{:}], {'Extinction', 'Propagating Wave', '1 Object', '2 Objects', ...
-    '3 Objects', '4 or More Objects'})
+    '3 Objects', '4 or More Objects'}, 'Location', 'southeast')
 
-xlabel("m")
-ylabel("beta")
-title("Regime Classification depending on m and beta")
+xlabel("\(m\)", 'Interpreter','latex')
+ylabel("\(\beta\)", 'Interpreter','latex')
+title("Regime Classification depending on \(m\) and \(\beta\)", 'Interpreter','latex')
 xlim([min(ms), max(ms)])
 ylim([min(betas), max(betas)])
 

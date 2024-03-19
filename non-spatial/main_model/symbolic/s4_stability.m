@@ -24,5 +24,5 @@ xlim([0 2])
 ylim([0 2])
 xlabel("m")
 ylabel("\(\beta\)", 'Interpreter','latex')
-title("\((\beta, m)\) plane", 'Interpreter', 'latex')
+title("\((m, \beta)\) plane", 'Interpreter', 'latex')
 hold off
