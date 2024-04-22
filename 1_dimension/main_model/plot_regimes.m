@@ -24,11 +24,10 @@ end
 %%
 save("solutions_regimes.mat")
 %%
-fig=figure();
-tiledlayout(2, 3);
+
 regime_labels = ["I", "II", "III", "IV", "V", "VI"];
 for idx = 1:size(us, 3)
-    nexttile
+    fig=figure('Units','inches');
     plot(xs(:, idx),us(end, :,idx))
     shading interp
     title("m = " + ms(idx))
@@ -36,4 +35,11 @@ for idx = 1:size(us, 3)
     xlabel("x")
     ylabel("u")
     ylim([0 1.1])
+
+    fig.PaperUnits = "inches";
+    fig.PaperSize = [2 2];
+    fig.PaperPositionMode = "manual";
+    fig.PaperPosition = [0 0 2 2];
+    saveas(fig, "main_model_1d_regimes" + idx + ".pdf", 'pdf')
+    close
 end

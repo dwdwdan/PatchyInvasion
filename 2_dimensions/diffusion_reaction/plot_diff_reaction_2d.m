@@ -17,3 +17,4 @@ clim([0 1])
 xlabel("x")
 ylabel("y")
 title("Solution at t = 40")
+colorbar

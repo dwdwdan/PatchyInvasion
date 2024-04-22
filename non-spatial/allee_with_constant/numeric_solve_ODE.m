@@ -13,12 +13,11 @@ epsilon = 1;
 dt=tmax/num_timesteps;  % Time step
 
 
-fig=figure();
 cs = [-200 0 75 100];
 u0s = [0:50:300 300:200:1500];
 convergence_times = [];
-tiledlayout("flow");
 for c = cs
+    fig = figure('Units','inches', 'Position',[1 1 2 2]);
     nexttile
     allee_diff = @(t,u) alpha*u * (u-beta) * (1-u/K) + c;
     hold on
@@ -36,5 +35,8 @@ for c = cs
         end
     end
     hold off
+
+    exportgraphics(fig, "allee_const_soln"+c+".pdf")
+    close
 
 end

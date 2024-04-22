@@ -33,15 +33,22 @@ parfor m_idx=1:length(ms)
 end
 
 %% Plot
-fig=figure();
-tiledlayout(4, 1);
+
 xlims = [50 250 50 75];
 for m_idx = 1:length(ms)
-    nexttile;
-    plot(ts,all_object_counts(:, m_idx),'-x', 'MarkerSize',4)
+    fig=figure();
+
+    plot(ts,all_object_counts(:, m_idx),'-', 'MarkerSize',4)
     title("m="+ms(m_idx))
     xlabel("t")
     ylabel("n(t)")
     ylim([0 max(all_object_counts(:,m_idx))+1])
     xlim([0 xlims(m_idx)])
+
+    fig.PaperUnits = "inches";
+    fig.PaperSize = [3 1.5];
+    fig.PaperPositionMode = "manual";
+    fig.PaperPosition = [0 0 3 1.5];
+    %saveas(fig, "main_model_1d_spatiotemporal" + m_idx + ".pdf", 'pdf')
+    %close
 end
